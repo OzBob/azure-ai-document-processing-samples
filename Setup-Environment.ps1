@@ -38,7 +38,7 @@ Write-Host "Starting environment setup..."
 
 if ($SkipInfrastructure -eq '$false' -or -not (Test-Path -Path './infra/InfrastructureOutputs.json')) {
     Write-Host "Deploying infrastructure..."
-    $InfrastructureOutputs = (./infra/Deploy-Infrastructure.ps1 `
+    $- = (./infra/Deploy-Infrastructure.ps1 `
             -DeploymentName $DeploymentName `
             -Location $Location)
 }
