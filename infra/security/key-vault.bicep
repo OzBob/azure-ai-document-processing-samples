@@ -38,11 +38,9 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' = {
       ipRules: []
       virtualNetworkRules: []
     }
-    enableSoftDelete: enableSoftDelete
+    enableSoftDelete: false
     enabledForTemplateDeployment: true
     enableRbacAuthorization: true
-    enablePurgeProtection: enablePurgeProtection
-    softDeleteRetentionInDays: retentionInDays
   }
 }
 
