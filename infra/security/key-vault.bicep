@@ -41,8 +41,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' = {
     enableSoftDelete: enableSoftDelete
     enabledForTemplateDeployment: true
     enableRbacAuthorization: true
-    enablePurgeProtection: enablePurgeProtection
-    softDeleteRetentionInDays: retentionInDays
   }
 }
 

@@ -84,6 +84,8 @@ module keyVault './security/key-vault.bicep' = {
   scope: resourceGroup
   params: {
     name: keyVaultName
+    enablePurgeProtection: false
+    enableSoftDelete: false
     location: location
     tags: union(tags, {})
     roleAssignments: concat(keyVaultAdministratorIdentityAssignments, [])
@@ -188,7 +190,7 @@ module aiServices './ai_ml/ai-services.bicep' = {
         }
         sku: {
           name: 'GlobalStandard'
-          capacity: 10
+          capacity: 8
         }
         raiPolicyName: workloadName
         versionUpgradeOption: 'OnceCurrentVersionExpired'
@@ -202,7 +204,7 @@ module aiServices './ai_ml/ai-services.bicep' = {
         }
         sku: {
           name: 'GlobalStandard'
-          capacity: 10
+          capacity: 8
         }
         raiPolicyName: workloadName
         versionUpgradeOption: 'OnceCurrentVersionExpired'
@@ -216,7 +218,7 @@ module aiServices './ai_ml/ai-services.bicep' = {
         }
         sku: {
           name: 'Standard'
-          capacity: 100
+          capacity: 80
         }
         raiPolicyName: workloadName
         versionUpgradeOption: 'OnceCurrentVersionExpired'
