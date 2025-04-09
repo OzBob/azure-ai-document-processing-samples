@@ -14,7 +14,7 @@ param tags object = {}
 ])
 param skuName string = 'standard'
 @description('Whether soft deletion is enabled. Defaults to true.')
-param enableSoftDelete bool = true
+param enableSoftDelete bool = false
 @description('Number of days to retain soft-deleted keys, secrets, and certificates. Defaults to 90.')
 param retentionInDays int = 90
 @description('Whether purge protection is enabled. Defaults to true.')
@@ -41,8 +41,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' = {
     enableSoftDelete: enableSoftDelete
     enabledForTemplateDeployment: true
     enableRbacAuthorization: true
-    enablePurgeProtection: enablePurgeProtection
-    softDeleteRetentionInDays: retentionInDays
   }
 }
 
